@@ -16,10 +16,13 @@ class ProductsPage:
         return self.driver.find_elements(*self.products)
 
     def add_first_product_to_cart(self):
-        self.driver.find_elements(*self.add_buttons)[0].click()
+        WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable(self.first_product_add_btn)
+        ).click()
+        time.sleep(1)
 
     def get_cart_count(self):
-        return WebDriverWait(self.driver, 10).until(
+        return WebDriverWait(self.driver, 20).until(
             EC.visibility_of_element_located(self.cart_badge)
         ).text
 

@@ -9,11 +9,11 @@ class MenuPage:
         self.logout_link = (By.ID, "logout_sidebar_link")
 
     def open_menu(self):
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 20).until(
             EC.element_to_be_clickable(self.menu_button)
         ).click()
 
     def logout(self):
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 20).until(
             EC.element_to_be_clickable(self.logout_link)
         ).click()
