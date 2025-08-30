@@ -1,3 +1,4 @@
+import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
@@ -16,9 +17,10 @@ class ProductsPage:
         return self.driver.find_elements(*self.products)
 
     def add_first_product_to_cart(self):
-        WebDriverWait(self.driver, 20).until(
-            EC.element_to_be_clickable(self.first_product_add_btn)
-        ).click()
+        buttons = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_all_elements_located(self.add_buttons)
+        )
+        buttons[0].click()
         time.sleep(1)
 
     def get_cart_count(self):
