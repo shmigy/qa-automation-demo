@@ -12,7 +12,8 @@ This is a **demo automation project** that tests login functionality on [SauceDe
 
 
 ## Project Structure
-```qa-automation-demo/
+```
+qa-automation-demo/
 │── tests/
 │ ├── ui/ # UI tests (Selenium)
 │ ├── api/ # API tests (Requests)
@@ -20,18 +21,24 @@ This is a **demo automation project** that tests login functionality on [SauceDe
 │── pytest.ini
 │── .github/
 │ └── workflows/
-│ └── ci.yml```
+│ └── ci.yml
+```
 
 ## Setup
 1. Clone the repository:
+   ```bash
    git clone https://github.com/<your_username>/qa-automation-demo.git
    cd qa-automation-demo
-
-2. Install dependencies:
+   ```
+3. Install dependencies:
+   ```
    pip install -r requirements.txt
+   ```
 
 ## Run tests
-pytest
+   ```
+   pytest
+   ```
 
 ## CI/CD Integration
 This project uses GitHub Actions to automatically execute tests:
