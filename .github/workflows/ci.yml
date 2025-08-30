@@ -8,14 +8,14 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04  # Ubuntu 22.04 radi s Python 3.10
 
     steps:
       # 1️⃣ Checkout koda
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Setup Python
+      # 2️⃣ Setup Python 3.10
       - name: Set up Python 3.10
         uses: actions/setup-python@v4
         with:
@@ -27,7 +27,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # 4️⃣ Install Chrome (za Selenium)
+      # 4️⃣ Install Google Chrome
       - name: Install Google Chrome
         run: |
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
