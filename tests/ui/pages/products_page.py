@@ -17,7 +17,9 @@ class ProductsPage:
         self.driver.find_elements(*self.add_buttons)[0].click()
 
     def get_cart_count(self):
-        return self.driver.find_element(*self.cart_badge).text
+        return WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(self.cart_badge)
+        ).text
 
     def sort_by_price_low_to_high(self):
         select = Select(self.driver.find_element(*self.sort_select))
