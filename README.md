@@ -12,7 +12,7 @@ This is a **demo automation project** that tests login functionality on [SauceDe
 
 
 ## Project Structure
-qa-automation-demo/
+```qa-automation-demo/
 │── tests/
 │ ├── ui/ # UI tests (Selenium)
 │ ├── api/ # API tests (Requests)
@@ -20,7 +20,7 @@ qa-automation-demo/
 │── pytest.ini
 │── .github/
 │ └── workflows/
-│ └── ci.yml
+│ └── ci.yml```
 
 ## Setup
 1. Clone the repository:
