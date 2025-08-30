@@ -2,24 +2,24 @@ name: Python Selenium Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ]       # svaki push na main branch
   pull_request:
-    branches: [ main ]
+    branches: [ main ]       # svaki PR prema main
 
 jobs:
   test:
-    runs-on: ubuntu-22.04  # Ubuntu 22.04 radi s Python 3.10
+    runs-on: ubuntu-24.04
 
     steps:
       # 1️⃣ Checkout koda
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Setup Python 3.10
-      - name: Set up Python 3.10
+      # 2️⃣ Setup Python 3.12
+      - name: Set up Python 3.12
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10
+          python-version: 3.12
 
       # 3️⃣ Install dependencies
       - name: Install dependencies
@@ -38,7 +38,7 @@ jobs:
         run: |
           pytest tests/ui --html=report.html --self-contained-html
 
-      # 6️⃣ Upload HTML report as artifact
+      # 6️⃣ Upload HTML report
       - name: Upload HTML report
         uses: actions/upload-artifact@v4
         with:
