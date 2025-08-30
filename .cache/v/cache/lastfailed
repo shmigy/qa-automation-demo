@@ -1,0 +1,5 @@
+{
+  "tests/ui/test_login.py::test_login_invalid": true, 
+  "tests/ui/test_login.py::test_login_valid": true, 
+  "tests/ui/test_products.py": true
+}
